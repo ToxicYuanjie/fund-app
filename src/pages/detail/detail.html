@@ -1,0 +1,209 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+        {{ detailData.name }}<br><label>{{ detailData.code }}</label>
+    </ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only >
+          <img src="assets/image/icon-share.png" width="60%">
+        </button>
+    </ion-buttons>  
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content>
+
+
+    
+<!--Important areas-->
+
+<div class="title-box">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-1 (click)="goback()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-col>
+            <ion-col col-10>
+                <h4>{{ detailData.name }}</h4>
+                <p>{{ detailData.code }}</p>
+            </ion-col>
+            <ion-col col-1></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-4>
+                <h4 main-col>{{ newest_nav_value  }}</h4>
+                <p>最新净值({{ newest_nav_date }})</p>
+            </ion-col>
+            <ion-col col-4>
+                <span class="round">
+                    <label [ngClass]="{'red-col': price_fluctuation_limit_value > 0,'green-col': price_fluctuation_limit_value < 0}">{{ price_fluctuation_limit_value | formatPercentWithSymbol}}</label> 
+                    <label>日涨跌幅(%)</label>
+                </span>
+            </ion-col>
+            <ion-col col-4>
+                <h5 red-col>{{  detailData.risk_level }}</h5>
+                <h5>{{ detailData.invest_class | FundsTypeSymbol }}</h5>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+
+<!-- type -->
+<div padding class="fund-type-list" [hidden]="!detailData.tags">
+    <span *ngFor="let item of detailData.tags">{{item}}</span>
+</div>
+
+<div class="sepline"></div>
+
+<!--Tabs-->
+<div paddingtop>
+<ion-toolbar>
+    <ion-segment [(ngModel)]="pet">
+        <ion-segment-button value="puppies" style="font-weight:normal">
+            收益率走势
+        </ion-segment-button>
+        <ion-segment-button value="kittens" style="font-weight:normal">
+            单位净值
+        </ion-segment-button>
+
+    </ion-segment>
+</ion-toolbar>
+</div>
+
+    <!--list-->
+    <div [ngSwitch]="pet">
+        <ion-list *ngSwitchCase="'puppies'">
+            <portfolio-history-graph *ngIf="daily_return_status" [daily-return]="daily_return" ></portfolio-history-graph>
+            <div class="no-text" *ngIf="!daily_return_status">本基金暂无收益率估算</div>
+        </ion-list>
+        <ion-list *ngSwitchCase="'kittens'" style="text-align:center">
+            <net-worth-graph *ngIf="daily_return_status"  [daily-return]="daily_return" paddingtop></net-worth-graph>
+            <div class="no-text" *ngIf="!daily_return_status">本基金暂无净值估算</div>
+        </ion-list>
+    </div>  
+
+    <!-- Historical performance -->
+    <div class="history-data">
+        <h5>历史业绩</h5>
+        <ion-list>
+            <ion-row class="one-line">
+                <ion-col col-3>
+                        <p style="color:#666">日期</p>
+                </ion-col>
+                <ion-col col-3 center>
+                        <p>本产品</p>
+                </ion-col>
+                <ion-col col-3 center>
+                        <p style="text-overflow: ellipsis;overflow: hidden;
+                        white-space: nowrap;">{{history_benchmark_name_name}}</p>
+                </ion-col>
+                <ion-col col-3 right>
+                        <p>同类排名</p>
+                </ion-col>
+            </ion-row>
+            <div *ngIf= "achievement">
+                <ion-row *ngFor = "let data of history_data">
+                    <ion-col col-3 >
+                        <p>{{data.label}}</p>
+                    </ion-col>
+                    <ion-col col-3 center>
+                        <p [ngClass]="{'red-col' : data.product_return_rate > 0 ,
+                                        'green-col' : data.product_return_rate < 0}">{{data.product_return_rate  | formatPercent}}</p>
+                    </ion-col>
+                    <ion-col col-3 center>
+                        <p [ngClass]="{'red-col' : data.benchmark_return_rate > 0 ,
+                                        'green-col' : data.benchmark_return_rate < 0}">{{data.benchmark_return_rate | formatPercent}}</p>
+                    </ion-col>
+                    <ion-col col-3 right>
+                        <p>
+                            <span style="color:#333">{{data.rank_numerator}}</span><span>/{{data.rank_denominator}}</span>
+                        </p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12>
+                        <button ion-button clear full (click)="loadingMore()">查看更多</button>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <p *ngIf= "!achievement" center padding>暂无数据哦···</p> 
+        </ion-list>       
+    </div>
+
+    <div class="sepline"></div>
+
+    <!-- detail data -->
+    <div class="fund-list-detail">
+        <ion-list>
+                <button ion-item (click)= "goArchivesPage()">
+                    <ion-label>基金档案</ion-label>
+                    <ion-note item-end>基金概况、分红</ion-note>
+                </button>
+                <button ion-item (click)= "goPortfoliosPage()">
+                    <ion-label>投资组合</ion-label>
+                    <ion-note item-end></ion-note>
+                </button>
+                <button ion-item (click)= "goManagerPage(current_managers_overview_name.length)">
+                    <ion-label>基金经理</ion-label>
+                    <ion-note item-end 
+                    *ngFor = "let current_name of current_managers_overview_name , let i = index">
+                        <label *ngIf="current_managers_overview_name.length == 1 ">
+                            {{current_name.name}}
+                        </label>
+                        <label *ngIf="current_managers_overview_name.length > 1 ">
+                            {{current_name.name}}
+                            <span *ngIf="current_managers_overview_name.length != i+1">、</span>
+                        </label>
+                    </ion-note>
+                </button>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>基金公司</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{company_full_name}}</p>
+                    </ion-col>
+                </ion-row>
+                
+                <!-- <button ion-item>
+                    <ion-label>购买信息</ion-label>
+                    <ion-note item-end>申购、赎回流程/购买、赎回费率</ion-note>
+                </button> -->
+        </ion-list>       
+    </div>
+    <!-- Risk hints -->
+    <div class="risk-honts">
+        <ion-list>
+            <ion-row>
+                <ion-col col-12 center>
+                    <span>风险提示</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12>
+                    <span>基金的过往业绩不预示其未来表现，相关数据仅提供参考，不构成建议投资建议。投资人请详阅基金合同和基金招募说明书，并自行承担投机基金的风险。</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 center>
+                    <span>数据来源：Wind数据库</span>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+   </div>
+</ion-content>
+
+<ion-footer>
+    <ion-row>
+        <ion-col col-4 center  >
+            <div>
+                <button [disabled] = "isdisabled"  [ngClass]="{'pk': isdisabled != 'disabled', 'disabled': isdisabled == 'disabled' }" (click)="goPkPage()" ion-button full clear 
+                    style="background-image:url('assets/image/detail-pk.png'); background-repeat:no-repeat; background-position:center; background-size:22px; height:3.8rem;margin:0"></button>
+            </div>
+        </ion-col>
+        <ion-col col-8>
+                <button [ngClass]="{'review-btn': isdisabled != 'disabled', 'redisabled': isdisabled == 'disabled' }" [disabled] = "isdisabled" ion-button full (click)="goReviewPage()">去评测</button>                                 
+        </ion-col>
+    </ion-row>
+</ion-footer>

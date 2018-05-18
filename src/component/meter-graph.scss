@@ -1,0 +1,35 @@
+meter-graph {
+    .chart-gauge
+    {
+      width: 400px;
+      margin: 0px auto  
+     } 
+    .chart-filled
+    {
+        fill: url(#blueGradient);
+    }
+    .chart-empty
+    {
+        fill: #E4E5ED;
+    }
+
+    .needle, .needle-center
+    {
+        fill: #0088FF;
+    }
+    text{
+        fill:#9AA0AA;
+    }
+    .lineCol{
+        fill:#D8D8D8;
+    }
+    text{
+        fill:#666;
+        &:nth-child(2){
+            color: #999ca7 !important;;
+        }
+    }
+    svg {
+      font: 10px sans-serif;
+    }
+}

@@ -1,0 +1,52 @@
+page-login {
+  .list-ios{
+    .item-block{
+        border:0px;
+        &:last-child{
+            border-top: 1px solid #ddd;
+        }
+    }
+  }
+  .ion-list {
+    margin-top: 25px;
+    ion-label {
+      width: 120px;
+      font-size: 1.6rem;
+    }
+
+    input {
+      color: $fund-gray-dark-col;
+      font-size: 1.4rem;
+    }
+  }
+  .logo{
+    width:18%;
+    margin:6% 0 12% 0;
+  }
+  .error {
+    margin-top: -32px;
+    color: $fund-red-col;
+    font-size: 1.2rem;
+    height: 64px;
+    overflow: hidden;
+  }
+  .header-ios .toolbar-background-ios{
+    background: #fff;
+    border: 0px;
+  }
+  .button{
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #2F96FD 0%, #0066F0 100%);     
+  }
+  .ion-list ion-label{
+    color:$fund-black-col;
+    width:auto;
+  }
+
+  .login-links{
+    width: 95%;
+    margin:1.5rem auto 0 auto;
+    color:$fund-main-col;
+    font-family: $font-pingfang;
+  }
+}

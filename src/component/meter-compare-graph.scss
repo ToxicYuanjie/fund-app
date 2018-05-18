@@ -1,0 +1,40 @@
+meter-compare-graph {
+    .chart-gauge
+    {
+      width: 400px;
+      margin: 0px auto  
+     } 
+    .chart-filled
+    {
+        fill: url(#blueGradient);
+    }
+    .chart-filled-2
+    {
+        fill: url(#redGradient);
+    }
+    .chart-empty,.chart-empty-2
+    {
+        fill: #E4E5ED;
+    }
+
+    .needle, .needle-center
+    {
+        fill: #0088FF;
+    }
+    .needleTwo{
+        fill: #E4E5ED;
+    }
+    text{
+        fill:#666;
+        &:nth-child(2){
+            color:#999CA7;
+        }
+    }
+    .lineCol{
+        fill:#D8D8D8;
+    }
+
+    svg {
+      font: 10px sans-serif;
+    }
+}

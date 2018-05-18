@@ -1,0 +1,16 @@
+{
+  "name": "fund_app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/data_api/",
+      "proxyUrl": "http://39.107.146.35/data_api/"
+    },
+    {
+      "path": "/user_api/",
+      "proxyUrl": "http://39.107.146.35/user_api/"
+    }
+  ],
+  "integrations": {}
+}

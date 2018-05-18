@@ -1,0 +1,159 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      自选
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only >
+          <ion-icon name="create-outline"></ion-icon>
+        </button>
+    </ion-buttons>  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background:#F9F9F9; font-family: 'PingFangSC-Regular, PingFang SC';">
+
+    <!--Stage performance-->
+<div class="fund-stage-performance">
+        <ion-row style="font-weight:bold;" >
+            <ion-col col-3 style="padding-top:15px; padding-bottom:15px; ">
+                    推荐度 
+            </ion-col>
+            <ion-col col-3 style="padding-top:15px; padding-bottom:15px;">
+                    基金名称
+            </ion-col>
+            <ion-col col-3 style="padding-top:15px; padding-bottom:15px;">
+                    日涨跌幅
+            </ion-col>
+            <ion-col col-3 style="padding-top:15px; padding-bottom:15px;">
+                    净值
+            </ion-col>
+        </ion-row> 
+        <ion-row *ngFor="let item of listData">
+            <ion-col col-3 style="font-size:1.5rem; padding-top:15px; padding-left:10%; text-align:left; font-family:'Geometric415BT-BlackA, Geometr415 Blk BT'">
+              {{item.level}}
+            </ion-col>
+            <ion-col col-3>
+                    {{item.name}}<br><label class="greg">{{item.code}}</label>                 
+            </ion-col>
+            <ion-col col-3>
+                    <label class="red">6.79%</label><br><span class="greg">2262001</span>  
+            </ion-col>
+            <ion-col col-3 style="color:#666666; padding-top:15px;">
+                3/100
+            </ion-col>
+        </ion-row>  
+    </div> 
+    
+<!-- 
+
+        <svg width="375px" height="598px" viewBox="0 0 375 598" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <desc>Created with Sketch.</desc>
+            <defs>
+                <rect id="path-1" x="0" y="-19" width="375" height="64"></rect>
+                <filter x="-0.1%" y="-0.4%" width="100.1%" height="100.8%" filterUnits="objectBoundingBox" id="filter-2">
+                    <feOffset dx="0" dy="-0.5" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+                    <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                    <feColorMatrix values="0 0 0 0 0.945098039   0 0 0 0 0.945098039   0 0 0 0 0.945098039  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+                </filter>
+                <rect x="341" y="15" width="18" height="18" id="rect-3"></rect>
+            </defs>
+            <g id="理财" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="加入理财计划-copy">
+                    <rect id="Rectangle-8" fill="#FFFFFF" x="0" y="-19" width="375" height="64"></rect>
+                    <rect id="Rectangle-8" fill="#FFFFFF" x="0" y="45" width="375" height="553"></rect>
+                    <g id="Rectangle-3">
+                        <use fill="#0088FF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    </g>
+                 
+                    <text id="自选" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" letter-spacing="1" fill="#FFFFFF">
+                        <tspan x="168" y="30">自选</tspan>
+                    </text>
+                    <rect id="Rectangle-38" fill="#F9F9F9" x="0" y="91" width="375" height="44"></rect>
+                    <rect id="Rectangle-8" fill="#FFFFFF" x="0" y="45" width="375" height="44"></rect>
+                    <text id="推荐度" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#333333">
+                        <tspan x="16" y="72">推荐度</tspan>
+                    </text>
+                    <text id="B" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#666666">
+                        <tspan x="32" y="118">B</tspan>
+                    </text>
+                    <text id="B-Copy" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#666666">
+                        <tspan x="32" y="167">B</tspan>
+                    </text>
+                    <text id="景顺大中华" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <tspan x="103" y="108" fill="#333333">景顺大中华</tspan>
+                        <tspan x="163" y="108" fill="#666666"></tspan>
+                    </text>
+                    <text id="景顺大中华-copy" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <tspan x="103" y="157" fill="#333333">景顺大中华</tspan>
+                        <tspan x="163" y="157" fill="#666666"></tspan>
+                    </text>
+                    <text id="1.6790" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#666666">
+                        <tspan x="316" y="117">1.6790</tspan>
+                    </text>
+                    <text id="1.6790-copy" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#666666">
+                        <tspan x="316" y="166">1.6790</tspan>
+                    </text>
+                    <text id="6.79%" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#FA374F">
+                        <tspan x="215" y="108">6.79%</tspan>
+                    </text>
+                    <text id="01-25" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <tspan x="215" y="128" fill="#999CA7">01-25</tspan>
+                        <tspan x="248.672" y="128" fill="#666666"></tspan>
+                    </text>
+                    <text id="-6.79%" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#3CB054">
+                        <tspan x="215" y="155">-6.79%</tspan>
+                    </text>
+                    <text id="01-25" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <tspan x="215" y="175" fill="#999CA7">01-25</tspan>
+                        <tspan x="248.672" y="175" fill="#666666"></tspan>
+                    </text>
+                    <text id="基金名称" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#333333">
+                        <tspan x="105" y="72">基金名称</tspan>
+                    </text>
+                    <text id="日涨跌幅" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#333333">
+                        <tspan x="205" y="72">日涨跌幅</tspan>
+                    </text>
+                    <text id="净值" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#333333">
+                        <tspan x="321" y="72">净值</tspan>
+                    </text>
+                    <text id="262001" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#999CA7">
+                        <tspan x="112" y="128">262001</tspan>
+                    </text>
+                    <rect id="Rectangle-38" fill="#F9F9F9" x="0" y="189" width="375" height="44"></rect>
+                    <text id="B" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal" fill="#666666">
+                        <tspan x="32" y="216">B</tspan>
+                    </text>
+                    <text id="景顺大中华" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <tspan x="103" y="206" fill="#333333">景顺大中华</tspan>
+                        <tspan x="163" y="206" fill="#666666"></tspan>
+                    </text>
+                    <text id="1.6790" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#666666">
+                        <tspan x="316" y="215">1.6790</tspan>
+                    </text>
+                    <text id="6.79%" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#FA374F">
+                        <tspan x="215" y="206">6.79%</tspan>
+                    </text>
+                    <text id="01-25" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal">
+                        <tspan x="215" y="226" fill="#999CA7">01-25</tspan>
+                        <tspan x="248.672" y="226" fill="#666666"></tspan>
+                    </text>
+                    <text id="262001" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#999CA7">
+                        <tspan x="112" y="226">262001</tspan>
+                    </text>
+                    <text id="262001-copy" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#999CA7">
+                        <tspan x="112" y="177">262001</tspan>
+                    </text>
+                </g>
+            </g>
+        </svg> -->
+
+
+</ion-content>
+
+<ion-footer>
+        <button ion-button full (click)="gotoSearchPage()">添加基金</button>
+        
+</ion-footer>

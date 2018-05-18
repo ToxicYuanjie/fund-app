@@ -1,0 +1,27 @@
+page-profile {
+
+  .profile-list {
+    margin-top: 20px;
+
+    .profile-name {
+        display: inline-block;
+        width: 33%;
+        color: $text-color;
+    }
+
+    .profile-value {
+        display: inline-block;
+    }
+  }
+
+  button.logout {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #1a1c20;
+    color: #f24a30;
+    font-size: 1.3rem;
+    @include bold-font();
+    height: 44px;
+  }
+  
+}

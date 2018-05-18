@@ -1,0 +1,412 @@
+page-detail {
+    ion-header{
+        ion-title{
+            text-align: center;
+            .toolbar-title-md{
+                font-size: 1.3rem
+            }
+            label{
+                font-size:0.7rem;
+            }
+        }
+    }
+    .title-box{
+        background:url(../assets/image/detail-banner.png) no-repeat #fff; 
+        background-size:100% 18.5rem; 
+        text-align:center;
+        height: 19.5rem;
+        ion-grid{
+            ion-row{
+                &:first-child{
+                    ion-icon{
+                        color:$fund-white-col;
+                    }
+                    h4,p{
+                        color:$fund-white-col;
+                        margin: 0px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                    p{
+                        font-size:13px;
+                    }
+                }
+                &:last-child{
+                    margin-top: 1.7rem;
+                    ion-col{
+                        h4,p,h5{
+                            margin:0px;
+                        }
+                        &:nth-child(1){
+                            h4{
+                                margin-top:5rem;
+                                font-family: Geometric415BT-BlackA, Geometr415 Blk BT;
+                            }
+                        }
+                        &:nth-child(2){
+                            text-align: center;
+                            
+                            label{
+                                width:100%;
+                                display: inline-block;
+                                &:first-child{
+                                    font-size: 3.6rem;
+                                    margin-top:2.2rem;
+                                    font-family: Geometric415BT-BlackA, Geometr415 Blk BT;
+                                }
+                            }
+                        }
+                        &:nth-child(3){
+                            h5{
+                               &:first-child{
+                                    margin-top:5rem;
+                               }
+                               &:last-child{
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                               }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .fund-type-list{
+        border-top: $fund-gray-col 1px solid;
+        span{
+            background: $fund-bg-gray-col;
+            color: #666666;
+            padding:4px 8px;
+            margin-right:10px;
+        }
+    }
+    .sepline{
+        height: 15px;
+        width: 100%;
+        background: $fund-gray-col;
+    }
+    .round{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+        width: 9.4rem;
+        height: 9.4rem;
+        background: #fff;
+        border-radius: 4.7rem;
+        margin:0;
+    }
+    @media screen and (max-width: 320px) {
+        .round{ 
+            width: 7.8rem;
+            height: 7.8rem;
+            background: #fff;
+            border-radius: 4rem;
+            margin:0;
+        }
+        .title-box{
+            ion-grid{
+                ion-row{
+                    &:last-child{
+                        margin-top: 3.2rem;
+                        ion-col{
+                            h4,p,h5{
+                                margin:0px;
+                            }
+                            &:nth-child(1){
+                                h4{
+                                    margin-top:4rem;
+                                }
+                            }
+                            &:nth-child(2){
+                                label{
+                                    &:first-child{
+                                        font-size: 3rem;
+                                        margin-top:1.5rem;
+                                    }
+                                }
+                            }
+                            &:nth-child(3){
+                                h5{
+                                   &:first-child{
+                                        margin-top:4rem;
+                                   }
+                                }
+                            }
+                        }
+                    }
+                }    
+            }    
+        }
+    }
+    .import-areas{
+        background: #fff;
+        padding:15px 0;
+        ion-row{
+            ion-col{
+                text-align: center;
+                font-size: 2rem;
+                label{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+    .item{
+        margin-top:15px;
+        background: #fff;
+    }
+    .fund-stage-performance{
+        background: #fff;
+        margin-top:15px;
+        padding-top:10px;
+        ion-row{
+            ion-col{
+                padding:10px 0;
+                &:nth-child(n+2){
+                    text-align: right;
+                }
+            }
+            &:nth-child(odd){
+                background-color: $fund-bg-gray-col;
+            }
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+    }
+    .segment-ios .segment-button{
+        color:#666;    
+        font-family: PingFangSC-Regular, PingFang SC;
+    }
+    .toolbar-ios .segment-ios{
+        background: #ffffff;
+        // border-bottom:#f1f1f1 1px solid;
+        
+    }
+    .toolbar-ios .segment-ios::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        // border-bottom:#f1f1f1 2px solid;
+    }
+    .toolbar::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        width: 100%;
+        border-top:#f1f1f1 1px solid;
+    }
+    .segment-ios .segment-button.segment-activated{
+        background-color:#fff;
+        color:#0088FF; 
+        font-weight: normal;
+        font-family: PingFangSC-Regular, PingFang SC;
+        overflow: all;
+
+    }
+    .segment-ios .segment-button.segment-activated::after{
+        content: " ";
+        width: 20%;
+        border-bottom:#0088FF 2px solid;
+        bottom: 0px;
+        left:40%;
+        position: absolute;
+    }
+
+    .segment-ios .segment-button:last-of-type{
+        margin-left:40px;
+    }
+    .segment-ios .segment-button{
+        border:0px;
+        font-size: 16px;
+    }
+    .toolbar-ios .segment-button{
+        max-width:120px;
+        height: 3.6rem;
+    }
+    ion-list{
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+    }
+    //new add style 
+    .history-data{
+        box-sizing: border-box;
+        h5{
+            padding-left:1.25rem;
+            font-size: 1.7rem;
+        }
+        ion-list{
+            color:#666;
+            margin:0;
+            .one-line{
+                background:#f9f9f9;
+            }
+            ion-row{
+                font-size:14px;
+                height:3.7rem;
+                &:nth-child(even){
+                    background-color: #F9F9F9;
+                }
+                
+                [col-3]{
+                    &:first-child{
+                        color:#333333;
+                        text-align: left;
+                        margin: 0;
+                        padding-left:1.25rem; 
+                        line-height:2;
+                    }
+                    &:last-child{
+                        padding-right: 1.2rem;
+                    }
+                    p{
+                        margin: 0;             
+                        line-height:2;
+                    }
+                }
+                [col-12]{
+                    button{
+                        height: 3rem;
+                        color:#666;
+                        font-size: 14px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .fund-list-detail{
+        ion-list{
+            margin: 0;
+        }
+        button{
+            margin: 0;
+            border-top:0 !important;
+            border-bottom:.05px solid #F1F1F1!important;
+            ion-label{
+                font-size:1.7rem;
+                color:#333;
+            }
+            [item-end]{
+                float:right;
+                font-size:1.4rem;
+                color:#9B9B9B;
+                margin:0;
+            }
+        }
+        ion-row{
+            border-bottom: 1px solid #f1f1f1;
+            height: 4.43rem;
+            [col-4]{
+                h5{
+                    margin: 0;
+                    padding-left:.8rem;
+                    font-size:1.7rem;
+                    color:#333;
+                    line-height: 3.8rem;
+                }
+            }
+            [col-8]{
+                p{
+                    font-size:1.4rem;
+                    color:#9B9B9B;
+                    margin:0;
+                    line-height:3.8rem;
+                    padding-right: 2.3rem;
+                }
+            }
+        }
+    }
+
+    .risk-honts{
+        background:#f5f5f5;
+        color:#9B9B9B;
+        ion-list{
+            background:#f5f5f5;
+            width:30rem;
+            margin: 0 auto;
+            font-size:1.3rem;
+        }
+    }
+
+    ion-footer [col-2]{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ion-footer ion-toolbar, ion-footer .col, ion-footer [col-8], ion-footer [col-2] {
+        padding:0px;
+    }
+    ion-footer .button-ios{
+        margin:0px;
+    }
+    ion-footer .pk{
+        color:$fund-main-col;
+        font-weight: bold;
+        font-size: 1.6rem;
+        background: $fund-main-col;
+        }
+    }
+    .loadMore{
+        background: $fund-bg-gray-col;
+        padding:7px 0px;
+    }
+    .no-text{
+        text-align: center;
+        margin-top:10rem;
+    }
+
+    ion-footer{
+        padding-top:1px;
+        button,.button-ios{
+            background-color: $fund-main-col;
+            background-repeat: aa;
+            background-position: c
+        }
+        .disabled{
+            background-color: #676767;
+        }
+        .redisabled{
+            background-color: #676767;
+            height: 3.8rem;
+            font-size: 1.55rem;
+            font-family: PingFangSC-Regular, PingFang SC;   
+            background: #676767;         
+            &:after{
+                content:'';
+                border-left: 2px solid #FFF;
+                position:absolute;
+                top:0;
+                left:0;
+                height:4.5rem;
+            }
+        }
+        .review-btn{
+            height: 3.8rem;
+            font-size: 1.55rem;
+            font-family: PingFangSC-Regular, PingFang SC; 
+            margin: 0;
+            background:#0088FF;           
+            &:after{
+                content:'';
+                border-left:2px solid #0063FF;
+                position:absolute;
+                top:0;
+                left:0;
+                height:4.5rem;
+        }
+
+    }
+    
+
+}

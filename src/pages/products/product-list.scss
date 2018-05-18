@@ -1,0 +1,226 @@
+page-product-list {
+    background: url('../assets/image/bg-home-title.png') no-repeat;
+    background-size: 100% 23px;
+    ion-list{
+        background: #fff;
+        ion-grid{
+            ion-col{
+                //text-align: right;
+                &:nth-child(n+2){
+                    text-align: right;
+                }
+                &:nth-child(3){
+                    color: red;
+                }
+            }
+        }
+    }
+    .top-box{
+        text-align:center;  
+        background: url('../assets/image/bg-home-title.png') #fff no-repeat;
+        background-size: 100% 23rem;
+        height: 33rem;
+        color: #FFFFFF;
+        .input{
+            label{
+                width:70%;
+                height: 3.2rem;
+                color: #AAAAAA;
+                line-height: 3.2rem;
+                text-align: left;
+                border-radius: 1.6rem;
+                border: 0;
+                background: url('../assets/image/icon-search.png') #FFFFFF no-repeat 1rem 0.75rem;
+                padding-left:3.2rem;
+                margin-top:2rem;
+                font-size: 1.4rem;
+                display: inline-block;
+            }
+        }
+        h1{
+            font-size: 3.2rem;
+            font-weight: bold;
+            margin-top:2rem;
+        }
+        p{
+            margin-top:2rem;
+            span{
+                border: #CCF8FF 1px solid;
+                color: #CCF8FF;
+                font-size: 1.5rem;
+                padding:4px 1.4rem;
+            }
+        }
+        .review-box{
+            background: #FFFFFF;
+            border-radius: 5px;
+            width: 90%;
+            margin:2.2rem auto 2rem auto;
+            box-shadow: 2px 2px 5px 0px rgba($color: #666666, $alpha: 0.4);
+            ion-row{
+                text-align: left;
+                h2{
+                    color: #F84145;
+                    font-size: 2.2rem;
+                    font-weight: bold;
+                    padding-left:1rem;
+                }
+                h3{
+                    color: #333333;
+                    font-size: 1.8rem;
+                    padding-left:1rem;
+                    margin:0px;
+                }
+                ion-col{
+                    &:last-child{
+                        text-align: center;
+                        img{
+                            height: 8rem;
+                        }
+                    }
+                }
+            }
+            h4{
+                font-size: 1.6rem;
+                line-height: 1.6rem;
+                color: $fund-main-col;
+                border-top:#F1F1F1 1px solid;
+                padding-top:1.4rem;
+                padding-bottom:1.4rem;
+                margin:0px;
+                img{
+                    vertical-align: middle;
+                    width:18px;
+                }
+            }
+        }
+    }
+    [item-list]{
+        .toolbar-title{
+            text-align:left;
+            font-size: 1.5rem;
+            font-family:PingFangSC-Regular, PingFang SC;
+            font-weight: normal;
+            margin-top:0.8rem;
+        }
+        ion-row{
+            margin-top:0.8rem;
+            ion-col{
+                text-align: center;
+                h1{
+                    height: 3.5rem;
+                    font-weight: normal;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    [symbol]{
+                        width:10px;
+                        height: 15px;
+                        //change the font
+                        font-size:14px;
+                        //margin-top:1.5rem;
+                    }
+                }
+                p{
+                    font-size:12px;
+                }
+                &:nth-child(1){
+                    h1{
+                        font-size:3.3rem;
+                        font-family: Geometric415BT-BlackA, Geometr415 Blk BT;
+                    }
+                }
+                &:nth-child(2){
+                    h1{
+                        font-size:3rem;
+                        font-family: Geometric415BT-BlackA, Geometr415 Blk BT;
+                    }
+                }
+                &:last-child{
+                    h1{
+                        font-size:1.6rem;
+                        font-family:"PingFangSC-Semibold, PingFang SC";
+                    }
+                }
+            }
+        }
+    }
+    .list-ios{
+        .item-block{
+            border-top: 1px solid #F1F1F1;
+            &:last-child{
+                border-bottom:0px;                
+            }
+        }
+    }
+    .list-header{
+        ion-grid{
+            background: #efefef;
+            ion-col{
+                //text-align: right;
+                &:nth-child(n+2){
+                    text-align: right;
+                }
+            }
+        }      
+    }
+    .segment-ios .segment-button{
+        color:#666;    
+        font-family: PingFangSC-Regular, PingFang SC;
+    }
+    .toolbar-ios .segment-ios{
+        background: #ffffff;
+        // border-bottom:#f1f1f1 1px solid;
+        
+    }
+    .toolbar-ios .segment-ios::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        // border-bottom:#f1f1f1 2px solid;
+    }
+    .toolbar::after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        width: 100%;
+        border-top:#f1f1f1 1px solid;
+    }
+    .segment-ios .segment-button.segment-activated{
+        background-color:#fff;
+        color:#0088FF; 
+        font-weight: normal;
+        font-family: PingFangSC-Regular, PingFang SC;
+        overflow: all;
+
+    }
+    .segment-ios .segment-button.segment-activated::after{
+        content: " ";
+        width: 20%;
+        border-bottom:#0088FF 2px solid;
+        bottom: 0px;
+        left:40%;
+        position: absolute;
+    }
+
+    .segment-ios .segment-button:last-of-type{
+        margin-left:40px;
+    }
+    .segment-ios .segment-button{
+        border:0px;
+        font-size: 16px;
+    }
+    .toolbar-ios .segment-button{
+        max-width:120px;
+        height: 3.6rem;
+    }
+    ion-list{
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+    }
+}

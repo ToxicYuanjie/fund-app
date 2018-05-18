@@ -1,0 +1,42 @@
+meter-compares-graph {
+    .chart-gauge
+    {
+      width: 400px;
+      margin: 0px auto  
+     } 
+    .chart-filled
+    {
+        fill: url(#blueGradient1);
+    }
+    .chart-filled-2
+    {
+        fill: url(#redGradient1);
+    }
+    .chart-empty,.chart-empty-2
+    {
+        fill: #E4E5ED;
+    }
+
+    .needle, .needle-center
+    {
+        fill: #0088FF;
+    }
+    .needleTwo{
+        fill: #FD2B30;
+    }
+    text{
+        fill:#9AA0AA;
+    }
+    .lineCol{
+        fill:#D8D8D8;
+    }
+    text{
+        fill:#666;
+        &:nth-child(2){
+            color:#999CA7;
+        }
+    }
+    svg {
+      font: 10px sans-serif;
+    }
+}

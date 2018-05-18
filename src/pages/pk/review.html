@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+            基金评测
+    </ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content style="background: #F1F1F1">
+        <div ionItem padding>
+            <h6 center paddingbottom>{{ productResults.name }} ( {{ productResults.code }} )</h6>
+            <ion-row>
+                <ion-col col-6 center>
+                    <h5>基站推荐度</h5>
+                    <h1 main-col Geometr415 class="fontSize">{{productResults.recommendation | SplitSymbolFirst}} <span symbol>{{productResults.recommendation | SplitSymbolLast}}</span></h1>                    
+                </ion-col>
+                <ion-col col-6>
+                    <meter-graph [invest-return]="invest_return"></meter-graph> 
+                </ion-col>
+            </ion-row>
+            <h5>预期表现</h5>
+            <expect-graph [performance-return]="performance_return" ></expect-graph>
+            <!-- [performance-second-return]="performance_second_return"  -->
+        </div>
+   
+        <div ionItem padding marginTop>
+            <h5> 今日指标</h5>
+            <ion-row paddingtop>
+                <ion-col col-2  style="padding-left:0" font14rem light-gray-col>收益</ion-col>
+                <ion-col col-10>
+                    <div class="range-chart">
+                        <div [ngStyle]="{'width': expect_ret +'%'}">{{ productResults.expect_ret  }}分</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row paddingtop>
+                <ion-col col-2  style="padding-left:0" font14rem light-gray-col>风险</ion-col>
+                <ion-col col-10>
+                    <div class="range-chart">
+                        <div [ngStyle]="{'width': expect_risk +'%'}">{{ productResults.expect_risk  }}分</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            
+            <h6 font14rem light-gray-col>点位</h6>
+            <poly-line-graph [line-return]="line_return"></poly-line-graph>
+
+        </div>
+
+        <div ionItem padding marginTop>
+            <h5>历史评分</h5>
+            <radar-graph [portfolio]="radar_graph" ></radar-graph>
+        </div>
+    
+</ion-content>

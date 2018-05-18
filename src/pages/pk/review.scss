@@ -1,0 +1,145 @@
+page-review {
+    ion-header{
+        ion-title{
+            text-align: center;
+            .toolbar-title-md{
+                font-size: 1.3rem
+            }
+            label{
+                font-size:0.7rem;
+            }
+        }
+    }
+    .fontSize{
+        font-size: 3.2rem;
+    }
+    [symbol]{
+        font-size:14px;
+        margin-left:-7px;
+        //margin-top:1.5rem;
+        position: relative;
+        top:-.5rem;
+    }
+    .import-areas{
+        background: #fff;
+        padding:15px 0;
+        ion-row{
+            ion-col{
+                text-align: center;
+                font-size: 2rem;
+                label{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+    .item{
+        margin-top:15px;
+        background: #fff;
+    }
+    [ionItem]{
+        background: #fff;
+        &:first-child{
+            margin-top:0px;
+        }
+    }
+    .fund-stage-performance{
+        background: #fff;
+        margin-top:15px;
+        padding-top:10px;
+        ion-row{
+            ion-col{
+                padding:10px 0;
+                &:nth-child(n+2){
+                    text-align: right;
+                }
+            }
+            &:nth-child(odd){
+                background-color: $fund-bg-gray-col;
+            }
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+    }
+
+    .segment-ios .segment-button{color:#666}
+    .toolbar-ios .segment-ios{
+        background: #ffffff;
+        color:#666666;
+        border-bottom:#f1f1f1 1px solid;
+    }
+    .segment-ios .segment-button.segment-activated{
+        background-color:#fff;
+        color:#0088FF; 
+        font-weight: bold;
+    }
+    .segment-ios .segment-button.segment-activated::after{
+        content: " ";
+        width: 20%;
+        border-bottom:#0088FF 2px solid;
+        bottom: 0px;
+        left:40%;
+        position: absolute;
+    }
+
+    .segment-ios .segment-button:last-of-type{
+        margin-left:40px;
+    }
+    .segment-ios .segment-button{
+        border:0px;
+        font-size: 16px;
+    }
+    .toolbar-ios .segment-button{
+        max-width:120px;
+        height: 3.6rem;
+    }
+    .list{
+        background: #fff;
+    }
+    .list-ios{
+        margin:0;
+    }
+    .range-chart{
+        background: $fund-gray-col;
+        //border-radius: 7px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        div{
+            color: #ffffff;
+            height: 18px;
+            background: $fund-main-col;
+            text-align: center;
+            //change border-radius
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
+    .item-ios.item-block .item-inner,.label-ios{padding:0}
+    ion-footer{
+        background: #fff;
+    }
+    ion-footer [col-2]{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ion-footer ion-toolbar, ion-footer .col, ion-footer [col-8], ion-footer [col-2] {
+        padding:0px;
+    }
+    ion-footer .button-ios{
+        margin:0px;
+        font-family: 'PingFangSC-Regular, PingFang SC'
+    }
+    ion-footer .pk{
+        color:$fund-main-col;
+        font-weight: bold;
+        font-size: 1.6rem;
+    }
+    .loadMore{
+        background: $fund-bg-gray-col;
+        padding:7px 0px;
+    }
+
+}

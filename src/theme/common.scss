@@ -1,0 +1,137 @@
+@mixin light-font {
+  font-family: HelveticaNeue-Light, PingFangSC-Ultralight;
+}
+
+@mixin bold-font {
+  font-family: HelveticaNeue, PingFangSC-Light ;
+}
+
+@mixin blackA-font {
+  font-family: Geometric415BT-BlackA ;
+}
+
+@font-face {
+  font-family: "Geometric415BT-BlackA";
+  src: url("#{$ionicons-font-path}/tt0524m.ttf?v=#{$ionicons-version}") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+ng-component{
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+
+.list-ios {
+  
+  .item-block {
+    border-top: 1px solid $item-ios-border-color;
+    border-bottom-width: 0;
+    
+    .item-inner {
+        border-bottom-width: 0;
+    }
+  }
+
+  >.item-block {
+    &:first-child {
+      border-top: 1px solid $item-ios-border-color;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $item-ios-border-color;
+    }
+  }
+
+}
+  
+.item-ios.item-block .item-inner {
+    border-bottom-width: 0;
+}
+
+.bar-button::after,.icon{
+  font-size: 26px !important;
+  // font-size: 12px;
+}
+ion-header ion-navbar .toolbar-background, .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  background: #fff;
+  border: 0px;
+}
+.toolbar-title{
+  font-size:1.8rem;
+  color: #333333;
+  font-weight: normal;
+}
+.item{
+  font-size: 1rem !important;
+  color: #9b9b9b !important;;
+}
+// Color
+[main-col],.main.col{
+  color:$fund-main-col;
+}
+[red-col],.red-col{
+  color:$fund-red-col;
+}
+[green-col],.green-col{
+  color:$fund-light-green-col;
+}
+[orange-col],.orange-col{
+  color:$fund-orange-col;
+}
+[gray-col]{
+  color:#9AA0AA;
+}
+[light-gray-col]{
+  color:#666;
+}
+[PingFang],.PingFang{
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+[Geometr415],.Geometr415{
+  font-family: Geometric415BT-BlackA, Geometr415 Blk BT;
+}
+
+//font
+.font12rem,[font12rem]{
+  font-size: 1.2rem;
+}
+.font14rem,[font14rem]{
+  font-size: 1.4rem;
+}
+.font20rem,[font20rem]{
+  font-size: 2rem;
+}
+
+
+//Padding
+[paddingbottom]{
+  padding-bottom: 15px;
+}
+[paddingtop]{
+  padding-top: 10px;
+}
+[paddingLeftClear]{
+  padding-left: 0px;
+}
+[paddingRightClear]{
+  padding-right: 0px;
+}
+
+
+//Margin
+[marginTop]{
+  margin-top: 15px;
+}
+[marginBotton]{
+  margin-bottom: 15px;
+}
+// Position
+[center]{
+  text-align:center
+}
+[left]{
+  text-align:left;
+}
+[right]{
+  text-align: right;
+}

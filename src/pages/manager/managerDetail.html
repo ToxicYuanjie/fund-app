@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        基金经理
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-sliding>
+            <ion-item>
+                <ion-avatar item-start>
+                        <img *ngIf= "fund_managers_data.gender == 'm' " src="assets/image/icon-image-man.png" style="width:58px;height:58px;"/>
+                        <img *ngIf= "fund_managers_data.gender == 'f' " src="assets/image/icon-image-woman.png" style="width:58px;height:58px;"/>
+                </ion-avatar>
+                <h2>{{fund_managers_data.name}}</h2>
+                <p>
+                    <span *ngIf="startTime != null">
+                        {{startTime | FundDetail | date:'yyyy.MM.dd'}}
+                    </span>
+                    <span *ngIf="startTime == null">
+                        {{startTime | FundDetail}}
+                    </span>
+                    -
+                    <span *ngIf="endTime != null">
+                        {{endTime | FundDetailTwo | date:'yyyy.MM.dd'}}
+                    </span>
+                    <span *ngIf="endTime == null">
+                        {{endTime | FundDetailTwo}}
+                    </span>
+                </p>
+              </ion-item>
+        </ion-item-sliding>
+        <ion-row>
+            <ion-col>
+                <p [ngClass]="{'invest-scope-content ': !modulesOverTextSatus.scope}">{{fund_managers_data.resume}}</p>
+            </ion-col>
+        </ion-row>
+        <!-- 箭头 -->
+        <ion-row>
+            <ion-col center>
+                    <img [src]=" modulesOverTextSatus.scopeImgUrl " style="width:16px;" (click)="textOmitted('scope')">
+            </ion-col>
+        </ion-row>  
+        <div class="spline"></div>
+        <div class="fund-manager-detail">
+            <ion-list>
+                <h5> {{fund_managers_data.name}}历任基金</h5>
+                <ion-item *ngFor="let served_list of served_products_list">
+                    <ion-row >
+                        <ion-col>
+                            <h6>{{served_list.product_full_name}}</h6>
+                            <p>
+                                <span *ngIf="served_list.office_date != null">
+                                        {{served_list.office_date | FundDetail | date:'yyyy.MM.dd'}}
+                                </span>
+                                <span *ngIf="served_list.office_date == null">
+                                        {{served_list.office_date | FundDetail }}
+                                </span>
+                                -
+                                <span *ngIf="served_list.departure_date != null">
+                                        {{served_list.departure_date | FundDetailTwo | date:'yyyy.MM.dd'}}
+                                </span>
+                                <span *ngIf="served_list.departure_date == null">
+                                    {{served_list.departure_date | FundDetailTwo}}
+                                </span>
+                            </p>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-list>
+    
+</ion-content>

@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+            基金PK
+    </ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content style="background: #F1F1F1">
+    <div ionItem padding>
+        <ion-grid class="title-box">
+            <ion-row>
+                <ion-col col-6>
+                    <div PingFang>
+                        <h6>{{fundInfoData.name}}</h6>
+                        <p>{{ fundInfoData.code }}</p>
+                    </div>
+                </ion-col>
+                <ion-col col-6 (click)="goSearchPage()">
+                    <div>
+                        <ion-icon name="ios-add" style="font-size:20rem;"></ion-icon>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <h6 mainTitle>基站推荐度</h6>
+        <ion-grid class="recommended-degree-box"> 
+            <ion-item>
+                <ion-row>
+                    <ion-col col-6><label level>{{fundInfoData.recommendation | SplitSymbolFirst}}<span>{{fundInfoData.recommendation | SplitSymbolLast}}</span></label></ion-col>                        
+                    <ion-col col-6><label text>--</label></ion-col>                        
+                </ion-row> 
+            </ion-item>
+        </ion-grid>
+        <h6 mainTitle>投资时机</h6>
+        <div>
+            <meter-compare-graph [invest-return]="invest_return"></meter-compare-graph>
+        </div>
+        <h6 mainTitle>预期表现</h6>
+        <div>
+            <expect-graph [performance-return]="performance_return" ></expect-graph>                
+        </div>
+    </div>
+    <div ionItem padding marginTop>
+        <div class="today-indicator">
+            <h6 mainTitle>今日指标</h6>
+            <h6 center font14rem gray-col>收益</h6>
+            <ion-row>
+                <ion-col col-6 paddingLeftClear paddingRightClear>
+                    <label class="oneProgress" [ngStyle]="{'width': retRisk[0] +'%'}"></label>
+                    <span>{{ fundInfoData.expect_ret }}分</span>                  
+                </ion-col>                        
+                <ion-col col-6>
+                    <label class="noneProgress" style="width:70%"></label>
+                    <span gray-col>--</span> 
+                </ion-col>                        
+            </ion-row>
+            <h6 center font14rem gray-col>风险</h6>
+            <ion-row>
+                <ion-col col-6 paddingLeftClear paddingRightClear>
+                    <label class="oneProgress" [ngStyle]="{'width': retRisk[1] +'%'}"></label>
+                    <span>{{ fundInfoData.expect_risk }}分</span>                    
+                </ion-col>                        
+                <ion-col col-6>
+                    <label class="noneProgress" style="width:70%"></label>
+                    <span gray-col>--</span> 
+                </ion-col>                        
+            </ion-row>
+        </div>
+        <div paddingtop>
+            <h6 center font14rem gray-col>点位</h6>
+            <poly-line-graph [line-return]="line_return"></poly-line-graph>
+        </div>
+    </div>
+    <div ionItem padding marginTop>
+        <div paddingtop>
+            <h6 mainTitle>历史评分</h6>  
+        </div>
+        <div class="historical-score-box">
+            <ion-row>
+                <ion-col col-6>
+                    <label>{{fundInfoData.historical_score | formatNumber}}</label>分
+                </ion-col>                        
+                <ion-col col-6>
+                    <label class="gray">--&nbsp;分</label>
+                </ion-col>                        
+            </ion-row>
+        </div>
+        <radar-graph [portfolio]="radar_graph" ></radar-graph>
+    </div>
+        
+</ion-content>

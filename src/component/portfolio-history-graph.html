@@ -1,0 +1,17 @@
+<ion-grid marginTop class="item-title">
+    <ion-row>
+        <ion-col col-3 *ngFor="let item of this.period_list" [ngClass]="{'current':item == this.current_period}" (click)="this.changePeriod(item)"> {{item.label}}</ion-col>
+    </ion-row>
+</ion-grid>
+<div class="legend">
+    <div class="item" *ngFor="let item of this.legend">
+        <span [ngStyle]="{'background-color':item.color}"></span>{{item.label}}&nbsp; <label style="color:#FF831F">{{item.yield}}</label>
+    </div>
+</div>
+<div class="container">
+</div>
+<!-- <div class="container" *ngIf="daily_return != null || daily_return != []">
+</div>
+<div class="container" *ngIf="daily_return == null || daily_return == []">
+        本基金暂无收益率估算        
+</div> -->

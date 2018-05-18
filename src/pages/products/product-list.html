@@ -1,0 +1,86 @@
+
+
+<ion-content >
+    <!--Banner-->
+    <div class="top-box">
+        <div class="input" (click)="goSearchPage()"><label>基金名称／代码</label></div>
+        <h1>基站 · 即将上线</h1>
+        <p><span>一个有态度的投资助手</span></p>
+        <div class="review-box">
+            <ion-row>
+                <ion-col col-7>
+                    <h2>投资先评测</h2>
+                    <h3>理财更放心</h3>
+                </ion-col>
+                <ion-col col-5>
+                        <img src="assets/image/home-banner-modified.png"/>
+                </ion-col>
+            </ion-row>
+            <h4 (click)="goSearchPage()">去评测 <img src="assets/image/icon-add.png" /></h4>
+        </div>
+    </div>
+
+
+    
+
+  <!--Tabs-->
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="puppies">
+          高收益Top10
+      </ion-segment-button>
+      <ion-segment-button value="kittens" (click)="loadLowRisks()">
+          低风险Top10
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+  <!--list-->
+  <div class="tab-con" [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'puppies'" >
+      <ion-item item-list *ngFor="let item of highReturnsList" (click)="goDetailPage(item.id)">
+          <ion-title>{{item.name}}（{{item.code}}）</ion-title>
+          <ion-row>
+            <ion-col col-4>
+                <h1 main-col font-family="Geometric415BT-BlackA, Geometr415 Blk BT" >{{item.recommendation | SplitSymbolFirst}} <span *ngIf = " item.recommendation.length != 1" symbol>{{item.recommendation | SplitSymbolLast}}</span></h1>
+                <p>推荐度</p>
+            </ion-col>
+            <ion-col col-4>
+                <h1 red-col><label>{{item.annual_return | formatPercent}}</label></h1>
+                <p>历史年化收益</p>
+            </ion-col>
+            <ion-col col-4>
+                <h1 [ngClass]="{'red-col' : item.invest_opportunity =='风险' ,
+                                'orange-col' : item.invest_opportunity =='观望' ,
+                                'green-col' : item.invest_opportunity =='机会'}">{{item.invest_opportunity}}</h1>
+                <p>投资时机</p>
+            </ion-col>
+          </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'kittens'">
+        <ion-item item-list *ngFor="let item of lowRisksList" (click)="goDetailPage(item.id)">
+            <ion-title>{{item.name}}（{{item.code}}）</ion-title>
+            <ion-row>
+                <ion-col col-4>
+                        <h1 main-col font-family="Geometric415BT-BlackA, Geometr415 Blk BT" >{{item.recommendation | SplitSymbolFirst}} <span *ngIf = " item.recommendation.length != 1" symbol>{{item.recommendation | SplitSymbolLast}}</span></h1>
+                        <p>推荐度</p>
+                </ion-col>
+                <ion-col col-4>
+                    <h1 red-col><label>{{item.annual_return | formatMoney}}</label>%</h1>
+                    <p>历史年化收益</p>
+                </ion-col>
+                <ion-col col-4>
+                    <h1 [ngClass]="{'red-col' : item.invest_opportunity =='风险' ,
+                    'orange-col' : item.invest_opportunity =='观望' ,
+                    'green-col' : item.invest_opportunity =='机会'}">{{item.invest_opportunity}}</h1>
+                    <p>投资时机</p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+

@@ -1,0 +1,66 @@
+page-manager-detail {
+    //回退箭头颜色
+    .bar-button-default{
+        color:#aaa!important;
+    }
+    //背景灰色条
+    ion-list{
+        margin-bottom: 0!important;
+        ion-item-sliding{
+            ion-item{
+                border-bottom:0!important;
+                h2{
+                    font-size: 1.8rem!important;
+                    color:#333333;
+                    font-weight: 600!important;
+                }
+                p{
+                    font-size:1.5rem!important;
+                    color:#666666!important;
+                }
+            }
+        }
+        ion-row{
+            ion-col{
+                p{  
+                    margin: 0 10px 0 16px;
+                    font-size: 1.4rem;
+                    color:#666;
+                    
+                }
+                .invest-scope-content{
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; 
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+    .spline{
+        height: 15px;
+        width: 100%;
+        background: $fund-gray-col;
+    }
+    .fund-manager-detail{
+        ion-list{
+            h5{
+                font-weight: 600;
+                margin-left: 1.6rem;
+                color:#333333;
+            }
+            h6{ 
+                // overflow: hidden;
+                // text-overflow:ellipsis;
+                white-space:pre-wrap;
+                font-size: 1.6rem;
+                color:#333333;
+                font-weight: 600;
+            }
+            p{
+                font-size:1.2rem;
+                color:#666;
+            }
+        } 
+    }
+}

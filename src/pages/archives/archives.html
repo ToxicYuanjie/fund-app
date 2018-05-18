@@ -1,0 +1,233 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            基金档案
+        </ion-title>
+    </ion-navbar>
+  </ion-header> 
+
+<ion-content style="position: relative">
+    
+    <div class="banner-fixed">
+        <ion-toolbar style="padding: 0 4px;position:fixed">
+            <ion-segment [(ngModel)]="pet">
+                <ion-segment-button value="puppies">
+                    概况
+                </ion-segment-button>
+                <!-- <ion-segment-button value="kittens">
+                    公告
+                </ion-segment-button> -->
+                <ion-segment-button value="bonus" (click)= "loadingBonus()">
+                    分红
+                </ion-segment-button>
+            </ion-segment>
+        </ion-toolbar>
+    </div>
+                  
+    <!--概况-->
+    
+    <div [ngSwitch]="pet" class="fund-survey pList-scroll">
+        <ion-list *ngSwitchCase="'puppies'">
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>基金简称</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.name}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>基金全称</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.full_name}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                    <h5>成立日期</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                    <p>{{archivesData.setup_date | date:"yyyy.MM.dd"}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>交易状态</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.purchase_redeem_display_info}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>基金管理费</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.management_fee_ratio | formatPercent}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>基金托管费率</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{ archivesData.custodian_fee_ratio | formatPercent}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>最新规模</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.total_net_assets_display_info}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>最新份额</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.total_unit_display_info}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <ion-col col-4>
+                        <h5>托管行</h5>
+                    </ion-col>
+                    <ion-col col-8 right>
+                        <p>{{archivesData.custodian_bank}}</p>
+                    </ion-col>
+                </ion-row> 
+            </ion-item>
+            <!-- 背景灰色条 -->
+            <div class="spline"></div>  
+
+            <!-- 投资目标 -->
+            <div class="investment-target">
+                <h5>投资目标</h5>
+                <p class="invest-goal-content content">{{archivesData.invest_object}}</p>
+            </div>
+
+            <!-- 背景灰色条 -->
+            <div class="spline"></div>  
+
+            <!-- 投资范围 -->
+            <div class="investment-target">
+                <h5>投资范围</h5>
+                <div class="content" [ngClass]="{'invest-scope-content ': !modulesOverTextSatus.scope}">
+                    <div>{{invest_scope.value}}</div>
+                    <div class="list" *ngFor="let item of invest_scope.children">
+                        <p>{{item.value}}</p>
+                        <div *ngFor= "let twoItem of item.children">
+                            <p>&nbsp;&nbsp;{{twoItem.value}}</p>
+                            <div *ngFor= "let threeItem of twoItem.children">
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;{{threeItem.value}}</p>
+                                <div *ngFor= "let fourItem of threeItem.children">
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;{{fourItem.value}}</p>
+                                </div>
+                            </div>                                               
+                        </div>
+                    </div>
+                </div>  
+                <!-- 箭头 -->
+                <div center>
+                    <img  [src]=" modulesOverTextSatus.scopeImgUrl " style="width:16px;" (click)="textOmitted('scope')">
+                </div>
+            </div>
+            <!-- 背景灰色条 -->
+            <div class="spline"></div>
+            <!-- 投资策略 -->
+            <div class="investment-target">
+                <ion-list>
+                    <ion-row>
+                        <ion-col>
+                            <h5>投资策略</h5>
+                        </ion-col>
+                        <ion-col col-12>
+                            <div class="content" [ngClass]="{'invest-strategy-content': !modulesOverTextSatus.strategy}">
+                                <div>{{invest_strategy.value}}</div>
+                                <div class="list" *ngFor="let item of invest_strategy.children">
+                                    <p>{{item.value}}</p>
+                                    <div *ngFor= "let twoItem of item.children">
+                                        <p>&nbsp;&nbsp;{{twoItem.value}}</p>
+                                        <div *ngFor= "let threeItem of twoItem.children">
+                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{threeItem.value}}</p>
+                                            <div *ngFor= "let fourItem of threeItem.children">
+                                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{fourItem.value}}</p>
+                                            </div>
+                                        </div>                                               
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- 箭头 -->
+                    <ion-row>
+                            <ion-col center>
+                                <img [src]=" modulesOverTextSatus.strategyImgUrl " style="width:16px;" (click)="textOmitted('strategy')">
+                            </ion-col>
+                    </ion-row>  
+                </ion-list>
+            </div>
+    </ion-list>
+
+        <!-- 分红  -->
+    <ion-list *ngSwitchCase="'bonus'">
+            <div class="bonus-data">
+                <ion-list  *ngIf= "bonus_dividends">
+                    <div class="spline"></div>
+                    <ion-row style= " height: 3rem;">
+                        <ion-col col-4>
+                            <p>权益登记日</p>
+                        </ion-col>
+                        <ion-col col-4 center>
+                            <p>红利发放日</p>
+                        </ion-col>
+                        <ion-col col-4 right>
+                            <p style= " padding-right: 1rem; ">每份分红(元)</p>
+                        </ion-col>
+                    </ion-row>  
+                    <ion-row *ngFor= "let dividends of dividend_data" class="content-data">
+                        <ion-col col-4>
+                            <p>{{dividends.eqy_record_date | date:'yyyy.MM.dd'}}</p>
+                        </ion-col>
+                        <ion-col col-4 center>
+                                <p>{{dividends.pay_date | date:'yyyy.MM.dd'}}</p>
+                        </ion-col>
+                        <ion-col col-4 right>
+                                <p [ngClass]= " { 'red-color' : dividends.cash_dvd_per_share > 0 } " center>{{dividends.cash_dvd_per_share | formatBonus}}</p>
+                        </ion-col>
+                    </ion-row>   
+                </ion-list>
+                <!-- 分红无数据显示的页面 -->
+                <ion-list *ngIf= "!bonus_dividends">
+                    <ion-row>
+                        <ion-col>
+                            <img right src="assets/image/icon-no-data.jpg" />
+                            <p center>暂时没有相关数据！</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-list>
+            </div>
+        </ion-list>
+    </div> 
+</ion-content>

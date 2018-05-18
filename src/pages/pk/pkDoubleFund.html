@@ -1,0 +1,98 @@
+<ion-header>
+        <ion-navbar hideBackButton="true">
+          <button ion-button clear small style="padding: 0;" (click)="goDetailPage()">  
+                <ion-icon name="arrow-back"></ion-icon>                
+          </button>  
+          <ion-title>
+                  基金PK
+          </ion-title>
+        </ion-navbar>
+      </ion-header> 
+      
+      <ion-content style="background: #F1F1F1">
+          <div ionItem padding>
+              <ion-grid class="title-box">
+                  <ion-row>
+                      <ion-col col-6>
+                          <div PingFang>
+                              <h6>{{oneFundInfoData.name}}</h6>
+                              <p>{{ oneFundInfoData.code }}</p>
+                          </div>
+                      </ion-col>
+                      <ion-col col-6 >
+                            <div PingFang>
+                                <h6>{{twoFundInfoData.name}}</h6>
+                                <p>{{ twoFundInfoData.code }}</p>
+                                <img src="assets/image/icon-exchange.png" (click)="goback()">
+                            </div>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+              <h6 mainTitle>基站推荐度</h6>
+              <ion-grid class="recommended-degree-box"> 
+                  <ion-item>
+                      <ion-row>
+                          <ion-col col-6><label level main-col>{{oneFundInfoData.recommendation | SplitSymbolFirst}}<span>{{oneFundInfoData.recommendation | SplitSymbolLast}}</span></label></ion-col>                        
+                          <ion-col col-6><label level red-col>{{twoFundInfoData.recommendation | SplitSymbolFirst}}<span>{{twoFundInfoData.recommendation | SplitSymbolLast}}</span></label></ion-col>                        
+                        </ion-row>
+                  </ion-item>
+              </ion-grid>
+              <h6 mainTitle>投资时机</h6>
+              <div>
+                   <meter-compares-graph [invest-return]="invest_return" [t-invest-return]="t_invest_return"></meter-compares-graph>                    
+              </div>
+              <h6 mainTitle>预期表现</h6>
+              <div>
+                    <expect-graph [performance-return]="performance_return" [performance-second-return]="performance_second_return"></expect-graph>                    
+              </div>
+          </div>
+          <div ionItem padding marginTop>
+              <div class="today-indicator">
+                  <h6 mainTitle>今日指标</h6>
+                  <h6 center font14rem gray-col>收益</h6>
+                  <ion-row>
+                      <ion-col col-6 paddingLeftClear paddingRightClear>
+                          <label class="oneProgress" [ngStyle]="{'width': firstRetRisk[0] +'%'}"></label>
+                          <span>{{oneFundInfoData.expect_ret}}分</span>                        
+                      </ion-col>                        
+                      <ion-col col-6>
+                          <label class="twoProgress" [ngStyle]="{'width': lastRetRisk[0] +'%'}"></label>
+                          <span>{{twoFundInfoData.expect_ret}}分</span> 
+                      </ion-col>                        
+                  </ion-row>
+                  <h6 center font14rem gray-col>风险</h6>
+                  <ion-row>
+                      <ion-col col-6 paddingLeftClear paddingRightClear>
+                          <label class="oneProgress" [ngStyle]="{'width': firstRetRisk[1] +'%'}"></label>
+                          <span>{{oneFundInfoData.expect_risk}}分</span>                        
+                      </ion-col>                        
+                      <ion-col col-6>
+                          <label class="twoProgress" [ngStyle]="{'width': lastRetRisk[1] +'%'}"></label>
+                          <span>{{twoFundInfoData.expect_risk}}分</span> 
+                        </ion-col>                        
+                  </ion-row>
+                  <h6 center font14rem gray-col>点位</h6>
+                  <div>
+                        <poly-line-graph [line-return]="line_return" [line-second-return] = "line_second_return"></poly-line-graph>                        
+                  </div>
+              </div>
+            </div>
+            <div ionItem padding marginTop>
+                <div>
+                    <h6 mainTitle>历史评分</h6>  
+                </div>
+                <div class="historical-score-box">
+                    <ion-row>
+                        <ion-col col-6>
+                            <label>{{oneFundInfoData.historical_score | formatNumber }}</label>分
+                        </ion-col>                        
+                        <ion-col col-6>
+                            <label red-col>{{twoFundInfoData.historical_score | formatNumber}}</label>分
+                        </ion-col>                        
+                    </ion-row>
+                </div>
+                <radar-graph [portfolio]="radar_graph" [rebalance]="radar_rebalance"></radar-graph>
+          </div>                
+              
+      </ion-content>
+      

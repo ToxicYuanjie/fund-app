@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-title>
+        <img src="../../assets/image/logo.png">
+    </ion-title>
+    <ion-list class="ion-list">
+        <ion-item>
+            <ion-label PingFang><span>手机号</span></ion-label>
+            <ion-input type="number" [(ngModel)]="phoneNumber" (ngModelChange)="validate()" placeholder="请输入您的手机号码"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label PingFang><span>验证码</span></ion-label>
+            <ion-input type="number" [(ngModel)]="code" (ngModelChange)="validate()" placeholder="请输入验证码"></ion-input>
+            <button ion-button PingFang item-right (click)="fetchSMSCode()"  [disabled]="fetchingCode">{{fetchingCode?timeCount+'秒':'获取验证码'}}</button>
+        </ion-item>
+        <ion-item>
+            <ion-label PingFang><span>密码</span></ion-label>
+            <ion-input type="password" [(ngModel)]="password" (ngModelChange)="validate()" placeholder="6-12位英文数字组合"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div class="error" padding>
+        {{error}}
+    </div>
+    <button ion-button full PingFang (click)="register()" [disabled]="!canSubmit" class="stand-button">注册</button> 
+</ion-content>

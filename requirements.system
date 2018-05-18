@@ -1,0 +1,17 @@
+#!/bin/bash
+currentver="$(nodejs --version)"
+requiredver="9.10.1"
+if [ "$(printf '%s\n' "$requiredver" "$currentver" | sort -V | head -n1)" = "$requiredver" ]; then
+    echo "nodejs is $currentver, greater than or equal to $requiredver, skip update"
+else
+    echo "nodejs is less than $requiredver, start update new version nodejs"
+    curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo apt-get install -y build-essential
+    sudo npm install -g ionic@3.19.0
+    sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+fi
+
+sudo apt-get install -y nginx
+sudo apt-get install nfs-common

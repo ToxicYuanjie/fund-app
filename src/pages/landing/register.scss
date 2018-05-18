@@ -1,0 +1,62 @@
+register-page {
+    background: #ffffff;
+    .ion-list {
+        margin-top: 15px;
+        ion-label {
+            display: flex;
+            justify-content: space-between;
+            width: 65px;
+            font-size: 1.6rem;
+        }
+        input {
+            color: $fund-gray-dark-col;
+            font-size: 1.4rem;
+        }
+    }
+    .error {
+        margin-top: -32px;
+        color: $fund-red-col;
+        font-size: 12px;
+        height: 52px;
+        overflow: hidden;
+    }
+    .nav-button-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    [item-right]{
+        border-radius: 11px;
+        background: $fund-main-col;
+    }
+    ion-title{
+        text-align: center;
+        img{
+            width:18%;
+            margin-top:2rem;
+            margin-bottom:3rem;
+        }
+    }
+    ion-item{
+        ion-label{
+            span{
+                color:$fund-black-col;
+            }
+        }
+    }
+    .item-ios .item-button{
+        padding:0 .9rem;
+    }
+    .list-ios{
+        .item-block{
+            &:first-child{
+                border-top: 0px;
+            }
+        }
+    }
+    .item-ios {
+        .item-button{
+            font-size: $font-size;
+        }
+    }
+}

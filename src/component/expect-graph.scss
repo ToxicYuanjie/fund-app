@@ -1,0 +1,278 @@
+expect-graph {
+    display: block;
+    .d3-line-chart {
+        .buleCol{
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+        }
+        .asea-gradient-0{
+            stop-color: #FFFFFF;
+            stop-opacity: 0;
+        }
+        .asea-gradient-50{
+            stop-color: #0088FF;
+            stop-opacity: 0.4;
+        }
+        .asea-gradient-p3{
+            stop-color: #0088FF;
+            stop-opacity: 0.3;
+        }
+        .benchmark-asea-gradient-0{
+            stop-color: #FFFFFF;
+            stop-opacity: 0;
+        }
+        .benchmark-asea-gradient-50{
+            stop-color: #F84145;
+            stop-opacity: 0.6;
+        }
+        .benchmark-asea-gradient-p3{
+            stop-color: #F84145;
+            stop-opacity: 0.3;
+        }
+        
+        .offset-0 {
+            stop-color: #0088FF;
+            stop-opacity: 0.1;
+        }
+        .offset-50 {
+            stop-color: #0088FF;
+            stop-opacity: 0.3;
+        }
+        .offset-100 {
+            stop-color: #FFFFFF;
+            stop-opacity: 1;
+        }
+        .second-offset-60 {
+            stop-color: #F84145;
+            stop-opacity: 0.6;
+        }
+        .second-offset-50 {
+            stop-color: #F84145;
+            stop-opacity: 0.5;
+        }
+        .second-offset-80 {
+            stop-color: #F84145;
+            stop-opacity: 0.8;
+        }
+        .benchmark-offset-0 {
+            stop-color: #FE3438;
+            stop-opacity: 0.2;
+        }
+        .benchmark-offset-100 {
+            stop-color: #FFFFFF;
+            stop-opacity: 1;
+        }
+        #rebalance-graph-gradient {
+            .offset-0 {
+                stop-color: #1580F3;
+                stop-opacity: 1;
+            }
+            .offset-80 {
+                stop-color: #1580F3;
+                stop-opacity: 0.5;
+            }
+            .offset-100 {
+                stop-color: transparent;
+                stop-opacity: 0;
+            }
+        }
+        #today-graph-gradient {
+            .offset-0 {
+                stop-color: #fff;
+                stop-opacity: 1;
+            }
+            .offset-80 {
+                stop-color: #fff;
+                stop-opacity: 0.5;
+            }
+            .offset-100 {
+                stop-color: transparent;
+                stop-opacity: 0;
+            }
+        }
+        .g-chart {
+            .line {
+                stroke: #5491F6;
+                stroke-width: 1px;
+                fill: none;
+            }
+            .area {
+                fill: url(#portfolio-history-graph);
+                stroke-width: 0;
+            }
+            .benchmark-line {
+                stroke: #FE3438;
+                stroke-width: 1px;
+                fill: none;
+            }
+            .benchmark-area {
+                fill: url(#benchmark-history-graph);
+                stroke-width: 0;
+            }
+            .expect-axea{
+                fill: url(#expect-axea-graph);
+                stroke-width: 0;
+            }
+
+            .prod-first-possibility-line {
+                stroke: #01DEF0;
+                stroke-width: 1px;
+                fill: none;
+            }
+            .prod-first-possibility-area-gradient {
+                stroke-width: 0px;
+                fill:#0088FF;
+                fill-opacity: 0.6;
+                // fill: url(#profit-1-graph-gradients);
+                
+            }
+            .prod-first-possibility-area {
+                stroke-width: 0px;
+                fill: #0088FF;
+                fill-opacity: 0.6;
+            }
+            .prod-first-small-possibility-area {
+                stroke-width: 0px;
+                fill: #0088FF;
+                fill-opacity: 0.8;
+            }
+
+            .prod-second-possibility-line {
+                stroke: #FFD51A;
+                stroke-width: 2px;
+                fill: none;
+            }
+            .prod-second-possibility-area {
+                stroke-width: 0px;
+                fill: #F84145;
+                fill-opacity: 0.6;
+            }
+            .prod-second-possibility-area-gradient {
+                stroke-width: 0px;
+                fill:#F84145;
+                fill-opacity: 0.6;
+                // fill: url(#profit-2-graph-gradients);
+            }
+            .prod-second-small-possibility-area {
+                stroke-width: 0px;
+                // fill: url(#prod-second-possibility-area);
+                fill: #F84145;
+                fill-opacity: 0.8;
+            }
+
+        }
+        .g-axis {
+            .axis.x {
+                .domain {
+                    stroke: transparent;
+                }
+                .tick {
+                    text {
+                        fill: #666666;
+                        font-size: 12px;
+                    }
+                    line {
+                        stroke: transparent;
+                        stroke-width: 1px;
+                    }
+                    &:nth-child(2) {
+                        text {
+                            text-anchor: start;
+                        }
+                    }
+                    &:last-child {
+                        text {
+                            text-anchor: end;
+                        }
+                        line {
+                            // stroke: #FFFFFF;
+                        }
+                    }
+                }
+            }
+            .axis.y {
+                .domain {
+                    stroke: none;
+                }
+                .tick {
+                    text {
+                        fill: #666666;
+                        font-size: 12px;
+                        text-anchor: end;
+                    }
+                    line {
+                        stroke: #dddddd;
+                        stroke-width: 1px;
+                    }
+                }
+            }
+        }
+        .g-operations {
+            .operation {
+                fill: #1C1E21;
+                path {
+                    transform: translate(-30px, -17px);
+                }
+                text {
+                    fill: #FFF;
+                    font-size: 10px;
+                    text-anchor: end;
+                }
+                line.rebalance {
+                    stroke-width: 1px;
+                    stroke: url(#rebalance-graph-gradient);
+                }
+                line.today {
+                    stroke-width: 1px;
+                    stroke: url(#today-graph-gradient);
+                }
+            }
+        }
+    }
+    .legend {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        .item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center; 
+            font-size: 1.3rem;
+            margin-top:0.4rem;
+            &:first-child{
+                align-items: center;
+                justify-content: left;
+            }
+      
+            span {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                margin-right: 8px;
+            }
+        }
+    }
+    .current-value {
+        fill: #666666;
+        text-anchor: end;
+        font-size: 12px;
+    }
+
+    .item-title{
+        width:80%;
+        ion-row{
+            border: #F1F1F1 1px solid;   
+            ion-col{
+                text-align: center;
+                border-right: #F1F1F1 1px solid;
+                &:last-child{
+                    border-right: 0px;
+                }
+                &.current{
+                    color: $fund-main-col;
+                }
+            }
+        }
+    }
+}

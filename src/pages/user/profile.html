@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{ 'profile.title' | translate }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="user != null" class="profile-list">
+    <ion-item>
+        <span class="profile-name">{{ 'profile.name' | translate }}</span>
+        <span class="profile-value">{{ user.real_name }}</span>
+    </ion-item>
+    <ion-item>
+      <span class="profile-name">{{ 'profile.phone_number' | translate }}</span>
+      <span class="profile-value">{{ user.phone }}</span>
+    </ion-item>
+    <ion-item>
+        <span class="profile-name">{{ 'profile.email' | translate }}</span>
+        <span class="profile-value">{{ user.email }}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+      <button ion-button class="logout" full (click)="confirmLogout()">{{ 'profile.log_out' | translate }}</button>
+  </ion-footer>
+
+</ion-content>

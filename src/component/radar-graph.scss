@@ -1,0 +1,45 @@
+radar-graph {
+    display: block;
+    .container {
+        .axis-label {
+            font-size: 1.3rem;
+            fill: #424242;
+            font-weight: 300;
+        }
+        .axis-line {
+            stroke: #F1F1F1;
+            stroke-width: 2px;
+        }
+        .axis-value {
+            font-size: 10px;
+        }
+        text {
+            fill: #999CA7;
+        }
+    }
+    .legend {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-top:1.5rem;        
+        .item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center; 
+            font-size: 1rem;
+            color:#9B9B9B;
+            &:first-child{
+                align-items: center;
+                justify-content: left;
+            }
+      
+            span {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                margin-right: 8px;
+            }
+        }
+    }
+}

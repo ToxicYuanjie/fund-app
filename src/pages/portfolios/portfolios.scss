@@ -1,0 +1,85 @@
+page-portfolios{
+    //返回三角箭头颜色
+    .bar-button-default{
+        color:#aaa!important;
+    }
+    
+    .have-portfolio-date{
+        .quarterly-report{
+            border-top: 1px solid #F1F1F1;
+            padding: .7rem 1.5rem;
+            font-size: 1.2rem;   
+        }
+        //背景灰色条
+        .spline{
+            height: 10px;
+            width: 100%;
+            background: $fund-gray-col;
+        }
+        
+        ion-list{
+            margin: 0!important;
+            .headlines-title{
+                height: 4rem;
+                [col-8]{
+                    h5{
+                        margin: 0 0 0 1rem;
+                        font-size: 1.7rem;
+                        color:#333;
+                        font-weight: 600;
+                        line-height:3rem;  
+                    }    
+                }
+                [col-4]{
+                    h6{
+                        margin: 0 1.3rem 0 0;
+                        font-size: 1.4rem;
+                        color:#666;
+                        font-weight: 600;
+                        line-height:3rem;
+                    }
+                }
+            }
+            .fund-name{
+                min-height:33px!important;
+            }
+            .list-detail{
+                padding-left: 1rem!important;
+                .table-header{
+                    ion-col{
+                        color: #999;
+                        font-size: 1.2rem; 
+                    }
+                }
+                .fund-list-detail{
+                    display: flex;
+                    align-items: center;
+                    [col-9]{
+                        font-size: 1.4rem;
+                        h5{
+                            color:#333;
+                        }
+                        p{
+                            color:#999;
+                        }
+                    }
+                    [col-3]{
+                        font-size: 1.4rem;
+                        color: #666; 
+                    }
+                }
+                
+            }
+        }
+    }
+    .no-portfolio-date{
+        img{
+            margin:4rem 0 0 7rem;
+        }
+        p{
+            font-size:1.6rem;
+            color:#9AA0AA;
+        } 
+    }
+    
+}

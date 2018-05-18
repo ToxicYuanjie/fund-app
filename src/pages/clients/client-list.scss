@@ -1,0 +1,53 @@
+page-client-list {
+    font-family: 'PingFangSC-Regular, PingFang SC';
+    .scroll-content{background: #fff;}
+    .toolbar-background,ion-header ion-navbar .toolbar-background, .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background:#0088FF; 
+    }
+    .toolbar-title {
+        color: #ffffff;
+    }
+    ion-footer{
+        background: #fff;
+        height: 14%;
+        .button{
+            width:80%;
+            margin-left:auto;
+            margin-right:auto;
+            border-radius: 20px;
+            background-image: linear-gradient(to right, #2F96FD 0%, #0066F0 100%);     
+        }
+    }  
+    .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{
+        color: #FFFFFF
+    }
+    .fund-stage-performance{
+        background: #fff;
+        ion-row{
+            ion-col{
+                padding:8px 0;
+
+            }
+        }
+        ion-row{
+            ion-col{
+                text-align: center;
+                .red{
+                    color:#F84145
+                }
+                .blue{
+                    color:#1AC49F;
+                }
+                .greg{
+                    color:#999CA7;
+                    font-size: 1.15rem;
+                }
+        
+            }
+            &:nth-child(even){
+                background: #F9F9F9;
+            }
+         }
+        
+    }
+}

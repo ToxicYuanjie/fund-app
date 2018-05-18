@@ -1,0 +1,44 @@
+page-landing {
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+  }
+  .landing-bg {
+    width: 33%;
+    margin-top:15%
+  }
+  .bottom-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .text-rect {
+    padding: 0px 40px 40px 30px;
+    color: $fund-main-col;
+    line-height: 1.5;
+    @include bold-font();
+    font-size: 14px;
+    .title {
+        font-size: 20px;
+        text-align: center;
+        font-family: "PingFangSC-Regular, PingFang SC"
+    }
+  }
+  .button-bar {
+    text-align: center;
+  }
+  .button-center{
+    text-align: center;
+    margin-bottom: 40px;
+    button{
+      background: $fund-main-col;
+      padding-left:35px;
+      padding-right:35px;
+      border-radius:30px;
+      color:#fff;
+    }
+  }
+}

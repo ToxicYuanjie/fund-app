@@ -1,0 +1,5 @@
+[NODE_ENV='production' && webpack -p --progress]
+out: ../www/build/*.js
+src/**/*
+*.json
+*.js

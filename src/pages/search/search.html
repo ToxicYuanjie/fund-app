@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-searchbar (input)="getItems($event)" *ngIf="!form" placeholder="输入基金名称/代码" [(ngModel)]="clearInput"></ion-searchbar>
+      <ion-searchbar (input)="getItems($event)" *ngIf="form" placeholder="输入PK基金名称/代码"></ion-searchbar>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="cancel()" style="font-size:1.5rem;color:#9B9B9B">
+            取消 
+          </button>
+      </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content>
+  <div class="search-list">
+      <ion-list *ngIf="searchValue != ''">
+        <ion-grid *ngIf="items != ''">
+          <ion-row *ngFor="let item of items" (click)="gotoDetail(item.id,item.name)">
+            <ion-col col-4>{{item.code}}</ion-col>
+            <ion-col col-8>{{item.name}}</ion-col>
+          </ion-row>       
+        </ion-grid>
+        <ion-grid *ngIf="items == ''" >
+          <div style="text-align:center;"> 暂无数据，敬请关注！ </div>
+        </ion-grid>
+      </ion-list>
+      <div class="labelGroud" *ngIf="searchValue == ''" > 
+          <h6>热门搜索</h6>
+          <div>
+              <ion-badge *ngFor="let item of hotSearchesData" (click)="gotoDetail(item.id,item.name)">{{item.name}}</ion-badge>
+              <div center padding *ngIf="hotSearchesData == undefinded">给点时间，我们为您推荐最热门的基金~ {{searchHistoricalData}}</div>
+          </div>
+          <ion-row>
+            <ion-col col-6>
+              <h6>历史搜索</h6>
+            </ion-col>
+            <ion-col col-6 right>
+                <ion-icon name="trash-outline" (click)="clearLocalStorageHistory()"></ion-icon>
+            </ion-col>
+          </ion-row> 
+          <div>
+              <ion-badge *ngFor="let item of searchHistoricalData" (click)="goDetailPage(item.id)">{{item.name}}</ion-badge>
+              <div center padding *ngIf="searchHistoricalData == undefinded">快去开启搜索体验吧~ {{searchHistoricalData}}</div>
+          </div>
+      </div>
+  </div>
+
+</ion-content>

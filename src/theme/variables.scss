@@ -1,0 +1,127 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals"; 
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+// This site is color
+$fund-main-col: #0088FF;
+$fund-blue-col: #0167F0;
+$fund-orange-col: #F89D1C;
+$fund-green-col: #3CB054;
+$fund-light-green-col: #1AC49F;
+$fund-gray-col: #F1F1F1;
+$fund-gray-dark-col: #666666;
+$fund-red-col: #F84145;
+$fund-black-col: #000000;
+$fund-shallow-black-col: #333333;
+$fund-white-col: #ffffff;
+$fund-bg-gray-col: #F9F9F9;
+
+// This site is font
+$font-pingfang: PingFangSC-Regular, PingFang SC;
+$font-geometr415: Geometric415BT-BlackA, Geometr415 Blk BT;
+
+
+// override ionic base styles
+$background-color: #FFFFFF;
+$font-family-ios-base: HelveticaNeue-Light, PingFangSC-Thin, monospace, sans-serif-light, sans-serif;
+$font-size: 1rem;
+$font-size-base: 1.2rem;
+$item-ios-body-text-font-size: 1.4rem;
+$list-background-color: #fff;
+$tabs-background: #ffffff;
+$text-color: #424242;
+
+// newco custom styels
+$item-ios-border-color: #ddd;
+
+//other
+$fixed-income-fill : #000000;
+$alternative-fill : #000000;
+$cash-fill : #000000;
+$stock-fill : #000000;
+$dark: #000000;
+$blue: #000000;
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+$positive:  #00A7FF;
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

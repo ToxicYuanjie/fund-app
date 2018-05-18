@@ -1,0 +1,26 @@
+page-manager-list {
+    //回退箭头颜色
+    .bar-button-default{
+        color:#aaa!important;
+    }
+    ion-content{
+        background: #F5F5F5!important;
+        ion-list{
+            margin-top:0!important;
+            ion-item-sliding{
+                [ion-item]{
+                    border-bottom:0!important;
+                    h2{
+                        font-size: 1.8rem!important;
+                        color:#333333;
+                        font-weight: 600!important;
+                    }
+                    p{
+                        font-size:1.5rem!important;
+                        color:#666666!important;
+                    }
+                }
+            }
+        }   
+    }
+}

@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            投资组合
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content>
+    <div class="have-portfolio-date" *ngIf= "judgementData">
+        <div class="quarterly-report">最新季度报({{endDate | date:"yyyy.MM.dd"}}) </div>
+        <!-- 背景灰色条 -->
+        <div class="spline"></div>
+        <!-- 股票  -->
+        <ion-list>
+            <ion-row class="headlines-title">
+                <ion-col col-8>
+                    <h5>股票</h5>
+                </ion-col>
+                <ion-col col-4 right>
+                    <h6>{{stockToTotal | formatPercent}}</h6>
+                </ion-col>
+            </ion-row>
+            <ion-item class="list-detail fund-name" style="height:33px">
+                <ion-row class="table-header">
+                    <ion-col col-9>重仓股票名称</ion-col>
+                    <ion-col col-3 right>占净值比例</ion-col>
+                </ion-row>
+            </ion-item>
+            <!-- 重仓股票数据 -->
+            <ion-item class="list-detail" *ngFor= "let item of stockPortfolios" style="height:52px">
+                <ion-row class="fund-list-detail">
+                    <ion-col col-9>
+                        <h5 style= "margin-bottom:0;">{{item.hold_product_name}}</h5>
+                        <p>{{item.hold_product_code}}</p>
+                    </ion-col>
+                    <ion-col col-3 right>{{item.value_to_nav | formatPercent}}</ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-list>
+        <div class="spline"></div>
+        <!-- 债券  -->
+        <ion-list>
+            <ion-row class="headlines-title">
+                <ion-col col-8>
+                    <h5>债券</h5>
+                </ion-col>
+                <ion-col col-4 right>
+                    <h6>{{bondToTotal | formatPercent}}</h6>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+        <div class="spline"></div>
+        <!-- 现金  -->
+        <ion-list>
+            <ion-row class="headlines-title">
+                <ion-col col-8>
+                    <h5>现金</h5>
+                </ion-col>
+                <ion-col col-4 right>
+                    <h6>{{cashToTotal | formatPercent}}</h6>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+        <div class="spline"></div>
+        <!-- 其他  -->
+        <ion-list>
+            <ion-row class="headlines-title">
+                <ion-col col-8>
+                    <h5>其他</h5>
+                </ion-col>
+                <ion-col col-4 right>
+                    <h6>{{otherToTotal | formatPercent}}</h6>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+        <div class="spline"></div>
+    </div>
+    <div class="no-portfolio-date" *ngIf= "!judgementData">  
+        <img right src="assets/image/icon-no-data.jpg" />
+        <p center>暂时没有相关数据！</p>
+    </div>
+</ion-content>

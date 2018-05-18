@@ -1,0 +1,175 @@
+page-archives {
+    //回退箭头颜色
+    .bar-button-default{
+        color:#aaa!important;
+    }
+    [item-list]{
+        .toolbar-title{
+            text-align:left;
+            font-size: 1.5rem;
+            font-family:PingFangSC-Regular, PingFang SC;
+            font-weight: normal;
+            margin-top:0.8rem;
+        }
+    }
+    
+    .segment-ios .segment-button{
+        color:#666;    
+        font-family: PingFangSC-Regular, PingFang SC;
+    }
+    .toolbar-ios .segment-ios{
+        background: #ffffff;
+    }
+    .segment-ios .segment-button.segment-activated{
+        background-color:#fff;
+        color:#0088FF; 
+        font-weight: normal;
+        font-family: PingFangSC-Regular, PingFang SC;
+        overflow: all;
+        border-bottom: 1px solid #f1f1f1;
+
+
+    }
+    .segment-ios .segment-button.segment-activated::after{
+        content: " ";
+        width: 100%;
+        border-bottom:#0088FF 2px solid;
+        bottom: 0px;
+        left:0;
+        position: absolute;
+    }
+    .segment-ios .segment-button{
+        border:0px;
+        font-size: 16px;
+        border-bottom: 1px solid #f1f1f1;
+
+    }
+    .toolbar-ios .segment-button{
+        max-width:100%;
+        height: 3.6rem;
+        border-bottom: 1px solid #f1f1f1;
+
+    }
+    ion-list{
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .banner-fixed{
+        position: fixed;
+        // top: 3.8rem;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+    }
+    .fund-survey{
+        margin-top: 3.3rem;
+        ion-list{
+            margin:0;
+            ion-row{
+                [col-4]{
+                    h5{
+                        font-size:1.7rem;
+                        color:#333333;
+                    } 
+                }
+                [col-8]{
+                    p{
+                        white-space: pre-wrap;
+                    } 
+                }
+            }
+        }
+        //背景灰色条
+        .spline{
+            height: 15px;
+            width: 100%;
+            background: $fund-gray-col;
+        }
+
+        .investment-target{
+            margin:0 1rem 0 1.3rem;
+            font-size:1.3rem;
+            h5{
+                font-size: 1.7rem;
+                margin:1rem 0 .8rem;
+                font-weight: 600;
+            }
+            .content{
+                line-height: 2rem;
+                .list *{
+                    padding-top:5px;
+                }
+            }
+            div,p{
+                font-size:1.4rem;
+                color:#666666;
+                margin: 0;
+            }    
+        }
+    }
+    .invest-scope-content,.invest-strategy-content,.invest-goal-content{
+        height: 6rem;
+        overflow: hidden;
+        display: -webkit-box;        
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    // .fund-noticet{
+    //     border-top: #F1F1F1 2px solid;
+       
+    //     span{
+    //         padding:4px 8px;
+    //         margin-right:10px;
+    //         border:#E2E2E2 solid 1px;
+    //         border-radius: 5px;
+    //         color:#8A8A8A;
+    //         font-size: 1.4rem;
+    //         &:first-child{
+    //             border-color:#0088FF;
+    //         } 
+    //     }
+        
+    // }
+
+    .bonus-data{
+        border-top:1px solid #f1f1f1;
+        ion-list{
+            ion-row{
+                height: 4rem;
+                [col-4]{
+                    p{
+                        margin:0 0 0 1rem;
+                        font-size:1.4rem;
+                        color:#999;
+                    }
+                }
+            }
+            .content-data{
+                [col-4]{
+                    p{
+                        font-size: 1.6rem;
+                        color:#333;
+                    }
+                }
+                
+            }
+    
+            img{
+                margin:4rem 0 0 7rem;
+            }
+            p{
+                font-size:1.6rem;
+                color:#9AA0AA;
+            } 
+        }
+         
+    }
+
+    .red-color{
+        color:#F84145!important;
+    }
+}

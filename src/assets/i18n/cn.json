@@ -1,0 +1,52 @@
+{
+  "common_period_one_year": "一年",
+  "common_period_three_years": "三年",
+  "common_period_five_years": "五年",
+  "common_period_ten_years": "十年",
+  "common_request_loading_message": "正在加载…",
+  "common_request_loading_error_message": "服务器错误，请稍后重试！",
+  "common_product_status_selling": "销售中",
+  "common_pull_to_refresh": "往下拉来刷新...",
+  "common": {
+    "button": {
+      "ok": "确定",
+      "cancel": "取消"
+    }
+  },
+  "landing": {
+    "slogan": "基于科技，为财富而站",
+    "desc": "立即体验",
+    "login": "登录"
+  },
+  "products":{
+    "list_title": "基金排行"
+  },
+  "login": {
+    "title": "登录",
+    "phone_number": "账号",
+    "phone_number_placeholder": "请输入你的手机号码",
+    "password": "密码",
+    "password_placeholder": "请输入登录密码",
+    "incorrect_phone_number_format": "手机号码格式不正确",
+    "incorrect_phone_number_password": "手机号或密码不正确",
+    "login": "登录",
+    "register":"注册",
+    "forget_password":"忘记密码"
+  },
+  "user": {
+    "personal_information": "个人资料",
+    "my_following": "我的关注",
+    "support_feedback": "支持和反馈"
+  },
+  "profile": {
+    "title": "个人资料",
+    "name": "姓名",
+    "phone_number": "手机号码",
+    "email": "邮箱",
+    "log_out": "登出",
+    "log_out_confirm": "您确定要登出吗?"
+  },
+  "prompt":{
+    "loading":"努力加载..."
+  }
+}

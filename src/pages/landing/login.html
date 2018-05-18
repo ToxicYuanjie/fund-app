@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="padding:0px 15px;">
+  <ion-list class="ion-list">
+    <div center><img src="assets/image/logo.png" class="logo"  /></div>
+    <ion-item>
+      <ion-label PingFang>{{ 'login.phone_number' | translate }}</ion-label>
+      <ion-input type="number" [(ngModel)]="phoneNumber" (ngModelChange)="validate()" placeholder="{{ 'login.phone_number_placeholder' | translate }}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label PingFang>{{ 'login.password' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="password" (ngModelChange)="validate()" placeholder="{{ 'login.password_placeholder'|translate }}"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="error" padding>
+    {{error}}
+  </div>
+  <button ion-button full PingFang (click)="login()" [disabled]="!canSubmit">{{ 'login.login' | translate }}</button>
+  <ion-row class="login-links">
+    <ion-col ico-6 blue-color (click)="toSmsCodeLoginPage()">
+        手机短信登录
+    </ion-col>
+    <ion-col ico-6 blue-color right (click)="toRegisterPage()">
+        {{ 'login.register' | translate }}
+    </ion-col>
+    <!-- <ion-col ico-6 blue-color style="text-align:right; " (click)="graph()">
+      {{ 'login.forget_password' | translate }}？
+    </ion-col> -->
+  </ion-row>
+</div>
+</ion-content>

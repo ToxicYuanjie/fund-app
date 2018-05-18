@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-navbar>
+        <div class="buttons">
+            <button class="button" ng-click="doSomething()">Left Button</button>
+        </div>
+        <ion-title>
+            演示
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+     <div style="background:#fff">
+        <div class="title-bar" margin>
+            <div class="title">
+                拆线图
+            </div>
+        </div>
+        <portfolio-history-graph [daily-return]="daily_return" [current-value]="portfolio_current_value"></portfolio-history-graph>
+    </div>
+
+
+    <div style="background:#fff; margin-top:15px;">
+            <div class="title-bar" margin>
+                <div class="title">
+                    时钟
+                </div>
+            </div>
+            <div>
+                <meter-graph [invest-return]="invest_return"></meter-graph>
+            </div>
+        </div>   
+    
+    <div style="background:#fff; margin-top:15px;">
+        <div class="title-bar" margin>
+            <div class="title">
+                雷达图
+            </div>
+        </div>
+        <div>
+            <radar-graph [portfolio]="radar_graph" [rebalance]="radar_rebalance"></radar-graph>
+        </div>
+    </div>   
+
+
+    
+    <div style="background:#fff; margin-top:15px;">
+        <div class="title-bar" margin>
+            <div class="title">
+                时钟 
+            </div>
+        </div>
+        <div>
+            <svg width="187.5px" height="152.5px" >
+                <defs>
+                    <linearGradient id="linearGradient-1">
+                        <stop stop-color="#48D3F9" offset="0%"></stop>
+                        <stop stop-color="#046AF1" offset="100%"></stop>
+                    </linearGradient>
+                </defs>
+                <g id="优化" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="产品详情-" transform="translate(-208.000000, -108.000000)" width="187.5px" height="152.5px">
+                        <path d="M322,175 C322,146.833478 301.628956,124 276.5,124 C251.371044,124 231,146.833478 231,175" id="Oval-17" stroke="#E4E5ED" stroke-width="6" stroke-linecap="round"></path>
+                        <path d="M297,129.882795 C290.702664,126.128626 283.507769,124 275.866748,124 C251.087527,124 231,146.385763 231,174" id="Oval-17" stroke="url(#linearGradient-1)" stroke-width="6" stroke-linecap="round"></path>
+                        <ellipse id="Oval-16" fill="#E4E5ED" cx="277" cy="179.5" rx="4" ry="4.5"></ellipse>
+                        <circle id="Oval-18" fill="#FFFFFF" cx="298" cy="130" r="2"></circle>
+                        <text id="观望" font-family="PingFangSC-Regular, PingFang SC" font-size="9" font-weight="normal" fill="#9AA0AA">
+                            <tspan x="268" y="116">观望</tspan>
+                        </text>
+                        <text id="投资时机" font-family="PingFangSC-Regular, PingFang SC" font-size="9" font-weight="normal" fill="#9AA0AA">
+                            <tspan x="260" y="198">投资时机</tspan>
+                        </text>
+                        <text id="机会" font-family="PingFangSC-Regular, PingFang SC" font-size="9" font-weight="normal" fill="#999CA7">
+                            <tspan x="324" y="198">机会</tspan>
+                        </text>
+                        <text id="风险" font-family="PingFangSC-Regular, PingFang SC" font-size="9" font-weight="normal" fill="#999CA7">
+                            <tspan x="208" y="198">风险</tspan>
+                        </text>
+                        <path d="M282.999976,155 L282.999976,155 C284.129843,155 285.058465,155.891462 285.104581,157.020387 L285.997446,178.877583 C286.065072,180.533041 284.77788,181.929875 283.122423,181.9975 C283.081629,181.999167 283.040805,182 282.999976,182 L282.999976,182 C281.343139,182 280.000006,180.656868 280.000006,179.00003 C280.000006,178.959202 280.00084,178.918378 280.002506,178.877583 L280.895371,157.020387 C280.941488,155.891462 281.870109,155 282.999976,155 Z" id="Rectangle-41" fill="#0088FF" transform="translate(283.000000, 168.500000) rotate(26.000000) translate(-283.000000, -168.500000) "></path>
+                        <circle id="Oval-18" fill="#FFFFFF" cx="278.5" cy="177.5" r="1.5"></circle>
+                        <path d="M276.996706,133 L278.003294,133 L278.003294,139.982942 L276.996706,139.982942 L276.996706,133 Z M295.535002,137.285937 L296.423765,137.758501 L293.145473,143.924073 L292.256709,143.451509 L295.535002,137.285937 Z M309.893947,149.588348 L310.471302,150.412896 L304.751211,154.418146 L304.173856,153.593598 L309.893947,149.588348 Z M316.877037,167.149951 L316.999709,168.149035 L310.068817,169.000042 L309.946145,168.000958 L316.877037,167.149951 Z M238.000291,168.149035 L238.122963,167.149951 L245.053855,168.000958 L244.931183,169.000042 L238.000291,168.149035 Z M244.528698,150.412896 L245.106053,149.588348 L250.826144,153.593598 L250.248789,154.418146 L244.528698,150.412896 Z M258.576235,137.758501 L259.464998,137.285937 L262.743291,143.451509 L261.854527,143.924073 L258.576235,137.758501 Z" id="Rectangle-50" fill="#D8D8D8"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <input type="file" accept="image/*" capture="camera">  
+    <input type="file" accept="video/*" capture="camcorder">  
+    <input type="file" accept="audio/*" capture="microphone">  
+    
+</ion-content>

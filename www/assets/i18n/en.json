@@ -1,0 +1,52 @@
+{
+  "common_period_one_year": "1y",
+  "common_period_three_years": "3y",
+  "common_period_five_years": "5y",
+  "common_period_ten_years": "10y",
+  "common_request_loading_message": "Loading…",
+  "common_request_loading_error_message": "Internal Server Error, Please wait!  ",  
+  "common_product_status_selling": "Selling",
+  "common_pull_to_refresh": "Pull to refresh...",
+  "common": {
+    "button": {
+      "ok": "OK",
+      "cancel": "Cancel"
+    }
+  },
+  "landing": {
+    "slogan": "基于科技，为财富而站",
+    "desc": "",
+    "login": "Login"
+  },
+  "products":{
+    "list_title": "Product Center"
+  },
+  "login": {
+    "title": "Log In",
+    "phone_number": "Phone Number",
+    "phone_number_placeholder": "Please input your phone number",
+    "password": "Password",
+    "password_placeholder": "Please input your password",
+    "incorrect_phone_number_format": "Incorrect phone number format",
+    "incorrect_phone_number_password": "Incorrect phone number and password",
+    "login": "Log In",
+    "register":"register",
+    "forget_password":"forget Password"
+  },
+  "user": {
+    "personal_information": "Personal Information",
+    "my_following": "My Following",
+    "support_feedback": "Support and Feedback"
+  },
+  "profile": {
+    "title": "Personal Information",
+    "name": "Name",
+    "phone_number": "Phone Number",
+    "email": "Email",
+    "log_out": "Log Out",
+    "log_out_confirm": "Are you sure to log out?"
+  },
+  "prompt":{
+    "loading":"loading..."
+  }
+}

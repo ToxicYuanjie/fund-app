@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        基金经理
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-sliding *ngFor = "let managers of managers_list" >
+            <button ion-item (click)= "goManagerDetailPage(managers.id,productId)">
+                <ion-avatar item-start>
+                    <img *ngIf= "managers.gender == 'm' " src="assets/image/icon-image-man.png" style="width:58px;height:58px;"/>
+                    <img *ngIf= "managers.gender == 'f' " src="assets/image/icon-image-woman.png" style="width:58px;height:58px;"/>
+                </ion-avatar>
+                <h2>{{managers.name}}</h2>
+                <p>
+                    <span *ngIf='managers.office_date != null'>
+                        {{managers.office_date | FundDetail | date:'yyyy.MM.dd'}}
+                    </span>
+                    <span *ngIf='managers.office_date == null'>
+                        {{managers.office_date | FundDetail}} 
+                    </span>
+                    -
+                    <span *ngIf='managers.departure_date != null'>
+                        {{managers.departure_date | FundDetailTwo | date:'yyyy.MM.dd'}}
+                    </span>
+                    <span *ngIf='managers.departure_date == null'>
+                        {{managers.departure_date | FundDetailTwo}}
+                    </span>
+                </p>
+                <!-- <p *ngIf="!date_full">{{managers.office_date}} {{managers.departure_date}}</p> -->
+            </button>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
